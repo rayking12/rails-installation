@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<div class="columns mt-6 is-centered">
+<% @blogs.each do |blog| %>
+      <div class="column card-container is-quartered">
+      <div class=" card">
+        <h2><%= blog.title %><h2>
+        <h2><%= blog.blogpost %><h2>
+        <h2><%= blog.author %><h2>
+        <%= link_to 'Show', blog %>
+        <%= link_to 'Edit', edit_blog_path(blog) %>
+        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        </div>
+     </div> 
+    <% end %>
+  
+
+<br>
+
+<%= link_to 'New Blog', new_blog_path %>
